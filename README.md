@@ -1,4 +1,4 @@
-## This is the GUI code for the WiFi localization paper:
+## This is the GUI source code for the WiFi localization paper:
 
 #### Yuxiang Sun, Ming Liu and Max Q.-H. Meng, "WiFi signal strength-based robot indoor localization," in Information and Automation (ICIA), 2014 IEEE International Conference on, 2014, pp. 250-256. [PDF](https://ieeexplore.ieee.org/document/6932662)
 
