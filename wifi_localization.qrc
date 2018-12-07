@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>pics/coordinate_axis.png</file>
+        <file>pics/cross.png</file>
+        <file>pics/map.png</file>
+        <file>pics/map_without_AP.png</file>
+    </qresource>
+</RCC>

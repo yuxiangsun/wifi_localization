@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>845</width>
+    <height>775</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>825</width>
+      <height>720</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Calibration</string>
+     </attribute>
+     <widget class="QPushButton" name="scan_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>60</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Scan</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="AP_tableView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>800</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="plotRSSI_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>800</width>
+        <height>320</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="measurementInfo_plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>400</width>
+        <height>180</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="measurement_progressBar">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>395</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="scanTimes_spinBox">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>40</y>
+        <width>65</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="plotRSSI_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>82</y>
+        <width>71</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Plot RSSI</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="viewMap_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>60</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>View Map</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="writeDatabase_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>122</y>
+        <width>71</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Write DB</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopScan_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>60</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="scanSettings_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>15</y>
+        <width>170</width>
+        <height>140</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Scan Settings</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="scanCoordinates_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>15</y>
+        <width>170</width>
+        <height>85</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Scan Coordinates</string>
+      </property>
+      <widget class="QSpinBox" name="X_spinBox">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>22</y>
+         <width>80</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="X_label">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>24</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Y_label">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>56</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="Y_spinBox">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>55</y>
+         <width>80</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="dataSelection_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>105</y>
+        <width>170</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Data Selection</string>
+      </property>
+      <widget class="QComboBox" name="dataSelection_comboBox">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>20</y>
+         <width>140</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>RSSI</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Quality</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <zorder>scanSettings_groupBox</zorder>
+     <zorder>scan_pushButton</zorder>
+     <zorder>AP_tableView</zorder>
+     <zorder>plotRSSI_widget</zorder>
+     <zorder>measurementInfo_plainTextEdit</zorder>
+     <zorder>measurement_progressBar</zorder>
+     <zorder>scanTimes_spinBox</zorder>
+     <zorder>plotRSSI_radioButton</zorder>
+     <zorder>viewMap_pushButton</zorder>
+     <zorder>writeDatabase_radioButton</zorder>
+     <zorder>stopScan_pushButton</zorder>
+     <zorder>scanCoordinates_groupBox</zorder>
+     <zorder>dataSelection_groupBox</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Data Viewer</string>
+     </attribute>
+     <widget class="QPushButton" name="readDatabase_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Read DB</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="readX_spinBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>30</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="readY_spinBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>70</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="readmeasurementInfo_plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>400</width>
+        <height>180</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="readplotRSSI_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>800</width>
+        <height>320</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveAs_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save as</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="creatTrainingDataset_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Training Data</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="trainingDatasetType_comboBox">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>180</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Raw Data</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mean Data</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mode Data</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="getSparseDatabase_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sparse DB</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="readdataSelection_comboBox">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>50</y>
+        <width>140</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>RSSI</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Quality</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Localization</string>
+     </attribute>
+     <widget class="QGraphicsView" name="map_graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>800</width>
+        <height>470</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="locationX_lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>125</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="locateStop_PushButton">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>65</y>
+        <width>60</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="locate_PushButton">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>35</y>
+        <width>60</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="localizationInfo_plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>20</y>
+        <width>400</width>
+        <height>180</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="showGrids_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>20</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Grids</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QSlider" name="zoom_verticalSlider">
+      <property name="geometry">
+       <rect>
+        <x>35</x>
+        <y>345</y>
+        <width>30</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="minimum">
+       <number>65</number>
+      </property>
+      <property name="maximum">
+       <number>300</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::NoTicks</enum>
+      </property>
+      <property name="tickInterval">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="Line" name="scale_line">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>650</y>
+        <width>30</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>4</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scale_label">
+      <property name="geometry">
+       <rect>
+        <x>746</x>
+        <y>630</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>46.2 cm</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="showAP_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>40</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Routers</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="locationY_lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>125</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="showWCS_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>60</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show CS</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="locationError_lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>160</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="methodSelection_comboBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>135</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>KNN</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Improved KNN</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GPR(Bayesian Filter Simulation)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GPR(Bayesian Filter)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Collaborative(simulation)</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="methodSettings_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>165</y>
+        <width>130</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Settings</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="methodSettings_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>115</y>
+        <width>150</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Method Settings</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groundTruthSettings_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>10</y>
+        <width>150</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Ground Truth Settings</string>
+      </property>
+      <widget class="QLineEdit" name="groundTruthX_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>60</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="groundTruthSelection_comboBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>130</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Input Manually</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Visual SLAM</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="groundTruthY_lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>50</y>
+         <width>60</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QRadioButton" name="showGroundTruth_radioButton">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>80</y>
+        <width>82</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Truth</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="locationPossible_lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>160</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="localizationResults_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>105</y>
+        <width>190</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Localization Results</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="localizationControl_groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>190</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Control Area</string>
+      </property>
+     </widget>
+     <zorder>localizationResults_groupBox</zorder>
+     <zorder>localizationControl_groupBox</zorder>
+     <zorder>groundTruthSettings_groupBox</zorder>
+     <zorder>methodSettings_groupBox</zorder>
+     <zorder>map_graphicsView</zorder>
+     <zorder>locationX_lineEdit</zorder>
+     <zorder>locateStop_PushButton</zorder>
+     <zorder>locate_PushButton</zorder>
+     <zorder>localizationInfo_plainTextEdit</zorder>
+     <zorder>showGrids_radioButton</zorder>
+     <zorder>zoom_verticalSlider</zorder>
+     <zorder>scale_line</zorder>
+     <zorder>scale_label</zorder>
+     <zorder>showAP_radioButton</zorder>
+     <zorder>locationY_lineEdit</zorder>
+     <zorder>showWCS_radioButton</zorder>
+     <zorder>locationError_lineEdit</zorder>
+     <zorder>methodSelection_comboBox</zorder>
+     <zorder>methodSettings_pushButton</zorder>
+     <zorder>showGroundTruth_radioButton</zorder>
+     <zorder>locationPossible_lineEdit</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Robot Control</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>845</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionDelay_Time"/>
+    <addaction name="actionSet_Linux_Passward"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionDelay_Time">
+   <property name="text">
+    <string>Set Delay Time</string>
+   </property>
+  </action>
+  <action name="actionSet_Linux_Passward">
+   <property name="text">
+    <string>Set Linux Password</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>scan_pushButton</tabstop>
+  <tabstop>AP_tableView</tabstop>
+  <tabstop>measurementInfo_plainTextEdit</tabstop>
+  <tabstop>saveAs_pushButton</tabstop>
+  <tabstop>viewMap_pushButton</tabstop>
+  <tabstop>plotRSSI_radioButton</tabstop>
+  <tabstop>writeDatabase_radioButton</tabstop>
+  <tabstop>stopScan_pushButton</tabstop>
+  <tabstop>X_spinBox</tabstop>
+  <tabstop>Y_spinBox</tabstop>
+  <tabstop>readDatabase_pushButton</tabstop>
+  <tabstop>readX_spinBox</tabstop>
+  <tabstop>readY_spinBox</tabstop>
+  <tabstop>readmeasurementInfo_plainTextEdit</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>scanTimes_spinBox</tabstop>
+  <tabstop>map_graphicsView</tabstop>
+  <tabstop>groundTruthSelection_comboBox</tabstop>
+  <tabstop>groundTruthX_lineEdit</tabstop>
+  <tabstop>groundTruthY_lineEdit</tabstop>
+  <tabstop>locateStop_PushButton</tabstop>
+  <tabstop>locate_PushButton</tabstop>
+  <tabstop>localizationInfo_plainTextEdit</tabstop>
+  <tabstop>showGrids_radioButton</tabstop>
+  <tabstop>zoom_verticalSlider</tabstop>
+  <tabstop>showAP_radioButton</tabstop>
+  <tabstop>locationY_lineEdit</tabstop>
+  <tabstop>showWCS_radioButton</tabstop>
+  <tabstop>locationError_lineEdit</tabstop>
+  <tabstop>methodSelection_comboBox</tabstop>
+  <tabstop>methodSettings_pushButton</tabstop>
+  <tabstop>creatTrainingDataset_pushButton</tabstop>
+  <tabstop>trainingDatasetType_comboBox</tabstop>
+  <tabstop>locationX_lineEdit</tabstop>
+  <tabstop>showGroundTruth_radioButton</tabstop>
+  <tabstop>locationPossible_lineEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
